@@ -1,0 +1,27 @@
+  <h2>Custom Questions</h2>
+  <div class="questions">
+    <div ng-repeat="question in questions" class="input-group">
+      <div class="controls">
+        <a href="#/question/{{question.id}}" class="question-edit">edit</a>
+        <a ng-click="deleteQuestion(question.id)" class="question-delete">delete</a>
+      </div>
+      <h3 class="question_text">{{$index + 1}}. {{question.text}}</h3>
+      <div ng-switch on="question.type" class="question_input">
+        <input type="text" ng-switch-when="short_answer">
+        <textarea ng-switch-when="long_answer"></textarea>
+        <fieldset ng-switch-when="single_choice">
+          <div ng-repeat="choice in question.choices">
+            <input type="radio" value="{{choice.choice_text}}" name="{{question.text}}">
+            <label>{{choice.choice_text}}</label>
+          </div>
+        </fieldset>
+        <fieldset ng-switch-when="multiple_choice">
+          <div ng-repeat="choice in question.choices">
+            <input type="checkbox" value="{{choice.choice_text}}" name="{{question.text}}">
+            <label>{{choice.choice_text}}</label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+

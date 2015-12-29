@@ -1,0 +1,35 @@
+[
+    {
+        "type": "short_answer",
+        "choices": [
+
+        ],
+        "text": "Test question 1"
+    },
+    {
+        "type": "long_answer",
+        "text": "Test Question 2"
+    },
+    {
+        "type": "long_answer",
+        "text": "Test Question 3"
+    },
+    {
+        "type": "single_choice",
+        "choices": [
+            {
+                "id": 0,
+                "choice_text": "first"
+            },
+            {
+                "id": 1,
+                "choice_text": "second"
+            },
+            {
+                "id": 2,
+                "choice_text": "third"
+            }
+        ],
+        "text": "Choose one"
+    }
+]

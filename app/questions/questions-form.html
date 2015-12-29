@@ -1,0 +1,45 @@
+<div ng-controller="QuestionFormCtrl">
+    <h2 ng-if="!question.id">Add Question</h2>
+    <h2 ng-if="question.id">Edit Question</h2>
+    <form novalidate class="simple-form">
+        <div>
+            <label for="questionType">Question Type</label>
+            <select name="type" id="questionType" ng-model="question.type" ng-change="addNewChoice()">
+                <option value="short_answer">Short Answer</option>
+                <option value="long_answer">Long Answer</option>
+                <option value="single_choice">Single Choice</option>
+                <option value="multiple_choice">Multiple Choice</option>
+            </select>
+        </div>
+        <div>
+            <label>Question Text</label>
+            <input type="text" ng-model="question.text" />
+        </div>
+        <div class="choice-row" data-ng-repeat="choice in question.choices">
+            <label>Choice Text</label>
+            <input type="text" ng-model="question.choices[choice.id].choice_text" /><br />
+            <span class="remove" ng-click="removeChoice(choice)">x</span>
+        </div>
+        <button class="add-choices" ng-click="addNewChoice()" ng-show="question.type=='single_choice' || question.type=='multiple_choice'">Add a choice</button>
+        <button type="button" ng-click="reset()">Reset</button>
+        <button type="submit" ng-click="update(question)">Save</button>
+    </form>
+    <div class="form-preview">
+        <h3>Preview</h3>
+        <label>{{question.text}}</label>
+        <input ng-if="question.type == 'short_answer'" type="text">
+        <textarea ng-if="question.type == 'long_answer'"></textarea>
+        <fieldset ng-if="question.type == 'single_choice'">
+            <div ng-repeat="choice in question.choices">
+                <input type="radio" value="{{choice.choice_text}}" id="{{choice.id}}">
+                <label for="{{choice.id}}">{{choice.choice_text}}</label>
+            </div>
+        </fieldset>
+        <fieldset ng-if="question.type == 'multiple_choice'">
+            <div ng-repeat="choice in question.choices">
+                <input type="checkbox" value="{{choice.choice_text}}" id="{{choice.id}}">
+                <label for="{{choice.id}}">{{choice.choice_text}}</label>
+            </div>
+        </fieldset>
+    </div>
+</div>
