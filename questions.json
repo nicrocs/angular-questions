@@ -1,35 +1,42 @@
 [
     {
-        "type": "short_answer",
-        "choices": [
-
-        ],
-        "text": "Test question 1"
-    },
-    {
+        "id": 1451486119891,
         "type": "long_answer",
-        "text": "Test Question 2"
+        "text": "Test Long answer"
     },
     {
-        "type": "long_answer",
-        "text": "Test Question 3"
-    },
-    {
+        "id": 1451486159459,
         "type": "single_choice",
         "choices": [
             {
                 "id": 0,
-                "choice_text": "first"
+                "choice_text": "Test answer 1"
             },
             {
                 "id": 1,
-                "choice_text": "second"
-            },
-            {
-                "id": 2,
-                "choice_text": "third"
+                "choice_text": "Test answer 2"
             }
         ],
-        "text": "Choose one"
+        "text": "Test Single Choice"
+    },
+    {
+        "id": 1451486187257,
+        "type": "multiple_choice",
+        "choices": [
+            {
+                "id": 0,
+                "choice_text": "Test Answer 1"
+            },
+            {
+                "id": 1,
+                "choice_text": "Test Answer 2"
+            }
+        ],
+        "text": "Test Multiple Choice"
+    },
+    {
+        "id": 1451486226386,
+        "type": "short_answer",
+        "text": "Test Short Answer"
     }
 ]
